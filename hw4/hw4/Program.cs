@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -123,9 +124,31 @@ namespace hw4
             this.age = age;
         }
 
+        public double Weight
+        {
+            get => weight;
+            set => weight = value;
+        }
+
+        public double Age
+        {
+            get => age;
+            set => weight = value;
+        }
+
         public override void Action()
         {
-            Console.WriteLine("");
+            Console.WriteLine("I'm a dog and I can bark");
+        }
+
+        public void Eat()
+        {
+            Console.WriteLine("I'm a dog and I can eat!");
+        }
+
+        public void output()
+        {
+            Console.WriteLine("I'm a dog. My weight: " + this.weight + ", My age is: " + this.Age);
         }
     }
 }
