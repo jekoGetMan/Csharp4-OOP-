@@ -23,9 +23,24 @@ namespace hw4
             Ostrich link1 = new Ostrich(101.1, 101.1);
             link1.Display();
             link1.Eat();
-            Console.ReadKey();
+//            Console.ReadKey();
 
             Console.WriteLine("************************************************");
+
+            Dog link2 = new Dog(3,3);
+            link2.Action();
+            link2.Eat();
+            link2.Output();
+
+            Console.WriteLine("************************************************");
+
+            Cat link3 = new Cat(3,3);
+            link3.Action();
+            link3.Eat();
+            link3.Output();
+
+            Console.ReadKey();
+
         }
     }
 
@@ -118,7 +133,7 @@ namespace hw4
         private double weight;
         private double age;
 
-        public Dog()
+        public Dog(double weight, double age)
         {
             this.weight = weight;
             this.age = age;
@@ -146,10 +161,52 @@ namespace hw4
             Console.WriteLine("I'm a dog and I can eat!");
         }
 
-        public void output()
+        public void Output()
+        {
+            Console.WriteLine("I'm a dog. My weight: " + this.weight + ", My age is: " + this.Age);
+        }
+
+        
+    }
+
+    public class Cat : baseClass2, Ieat
+    {
+        private double weight;
+        private double age;
+
+        public Cat(double weight, double age)
+        {
+            this.weight = weight;
+            this.age = age;
+        }
+
+        public double Weight
+        {
+            get => weight;
+            set => weight = value;
+        }
+
+        public double Age
+        {
+            get => age;
+            set => age = value;
+        }
+
+        public override void Action()
+        {
+            Console.WriteLine("I'm a cat and I can mew");
+        }
+
+        public void Eat()
+        {
+            Console.WriteLine("I'm a dog and I can eat!");
+        }
+
+        public void Output()
         {
             Console.WriteLine("I'm a dog. My weight: " + this.weight + ", My age is: " + this.Age);
         }
     }
+
 }
 
